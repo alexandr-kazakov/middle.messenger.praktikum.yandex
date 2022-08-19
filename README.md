@@ -31,6 +31,10 @@ Cool messenger for fun!
 
 [Github](https://github.com/alexandr-kazakov/middle.messenger.praktikum.yandex#readme)
 
+## Live demo
+
+[Netlify](https://admirable-gecko-a28895.netlify.app/)
+
 ## Design
 [Figma](https://www.figma.com/file/b2ORgJmyO77lXltwZMpqHD/Chat_external_link?node-id=0%3A1)
 
