@@ -1,0 +1,25 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Страница регистрации'
+  - var pageDescription = 'Регистрация в мечту'
+  - var pageKeywords = 'Ключевые слова'
+
+block content
+  main.page-wrapper.page-wrapper_enter
+    .enter-box 
+      .enter-box__main
+        h1.enter-box__title Регистрация
+        +input-box({type: "email", name:"email", placeholder:"Почта", title:"Почта"}).input-box_margin-b-xs
+        +input-box({type: "text", name:"login", placeholder:"Логин", title:"Логин"}).input-box_margin-b-xs
+        +input-box({type: "text", name:"first_name", placeholder:"Имя", title:"Имя"}).input-box_margin-b-xs
+        +input-box({type: "text", name:"last_name", placeholder:"Фамилия", title:"Фамилия"}).input-box_margin-b-xs
+        +input-box({type: "tel", name:"phone", placeholder:"Телефон", title:"Телефон"}).input-box_margin-b-xs
+        +input-box({type: "password", name:"password", placeholder:"Пароль", title:"Пароль"}).input-box_password.input-box_margin-b-xs
+        +input-box({type: "password", name:"password_confirm", placeholder:"Пароль (еще раз)", title:"Пароль (еще раз)"}).input-box_password.input-box_margin-b-xs
+
+
+      .enter-box__footer
+        +btn({mode: "btn", type: "submit", text: "Зарегистрироваться"}).btn_theme-primary.btn_full-width.btn_margin-b-xs
+        a(href="#") Войти
+

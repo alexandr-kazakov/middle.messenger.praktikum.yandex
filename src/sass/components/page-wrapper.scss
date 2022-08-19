@@ -1,0 +1,28 @@
+// begin Page-wrapper
+.page-wrapper {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+  width: 100%;
+  
+  &_enter, &_profile, &_error{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &_enter {
+    max-width: 360px;
+  }
+
+  &_profile {
+    max-width: 540px;
+    padding-left: 78px;
+  }
+
+  &_error {
+    max-width: 200px;
+  }
+}
+

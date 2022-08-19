@@ -1,0 +1,9 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Страница не найдена'
+  - var pageDescription = '404'
+
+block content
+  main.page-wrapper.page-wrapper_error
+    +error-box({error: "404", desc: "Не туда попали"})

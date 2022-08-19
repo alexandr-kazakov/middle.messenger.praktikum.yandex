@@ -1,0 +1,35 @@
+
+
+// Colors
+$primary: #3369F3;
+$primary-hover: darken($primary, 10%);
+
+$black: #2b2b2b;
+$black-hover: #363636;
+
+$info: #4a90e2;
+$info-hover: #66a8f4;
+
+$success: #189d3f;
+$success-hover: #1cb649;
+
+$warning: #f5a623;
+$warning-hover: #fdb640;
+
+$danger: #FF2F2F;
+
+$gray: #999999;
+
+$gray-light: #EAEAEA;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$boxShadowBase: 0px 0px 6px rgba(0, 0, 0, 0.14);
+$boxRadiusBase: 12px;
+
