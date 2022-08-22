@@ -1,0 +1,24 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Все страницы'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+
+
+block content
+  main
+    h1 SolMessenger страницы:
+    ul
+      li(style="margin-bottom: 20px")
+        a(href="register.pug" target="_blank") Регистрация
+      li(style="margin-bottom: 20px")
+        a(href="login.pug" target="_blank") Логин
+      li(style="margin-bottom: 20px")
+        a(href="user-profile.pug" target="_blank") Профиль
+      li(style="margin-bottom: 20px")
+        a(href="404.pug" target="_blank") 404
+      li(style="margin-bottom: 20px")
+        a(href="404.pug" target="_blank") 500
+
+

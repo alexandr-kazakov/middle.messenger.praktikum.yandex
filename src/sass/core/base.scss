@@ -1,0 +1,95 @@
+
+html {
+  font-family: sans-serif;
+  height: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: #1E1E1E;
+  font-family: 'Roboto','Helvetica', 'Arial', sans-serif;
+  font-size: 13px;
+  height: 100%;
+  line-height: 1.4;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+::selection {
+  background-color: rgba(124, 159, 248, 0.4);
+  text-shadow: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+
+  &:hover {
+    color: $primary-hover;
+  }
+  &:active {
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: #fff;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+iframe {
+  border: none;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+

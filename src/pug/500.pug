@@ -1,0 +1,10 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Ошибка сервера'
+  - var pageDescription = '500'
+  - var pageKeywords = 'Ключевые слова'
+
+block content
+  main.page-wrapper.page-wrapper_error
+    +error-box({error: "500", desc: "Мы уже фиксим"})

@@ -1,0 +1,105 @@
+.clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.align-i-c {
+  align-items: center;
+}
+.clear-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.display-i-b {
+  display: inline-block;
+}
+
+.display-f {
+  display: flex;
+}
+
+.display-i-f {
+  display: inline-flex;
+}
+
+.display-block {
+  display: block;
+}
+
+.flex-dir-c {
+  flex-direction: column;
+}
+
+.height-max {
+  height: 100%;
+}
+
+.justify-c-e {
+  justify-content: flex-end;
+}
+
+.justify-c-c {
+  justify-content: center;
+}
+
+.margin-t-md {
+  margin-top: 30px;
+}
+
+.margin-b-xs {
+  margin-bottom: 10px;
+}
+
+.margin-b-xs-2 {
+  margin-bottom: 15px;
+}
+
+.margin-b-sm {
+  margin-bottom: 20px;
+}
+
+.margin-b-md {
+  margin-bottom: 30px;
+}
+
+.margin-b-lg {
+  margin-bottom: 40px;
+}
+
+.margin-l-r-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.text-align-c {
+  text-align: center;
+}
+.text-align-r {
+  text-align: right;
+}
+
+.overflow-x-h {
+  overflow-x: hidden;
+}
+
+.color-red {
+  color: $danger;
+  &:hover {
+    color: $danger;
+  }
+}

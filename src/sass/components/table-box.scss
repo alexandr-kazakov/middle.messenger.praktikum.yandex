@@ -1,0 +1,15 @@
+.table-box {
+    width: 100%;
+    td, th {
+        border-bottom: 1px solid $gray-light;
+        text-align: left;
+        padding: 8px 0;
+      }
+
+      &_two-between{
+        td:nth-child(even) {
+            color: $gray;
+            text-align: right;
+          }
+      }
+}

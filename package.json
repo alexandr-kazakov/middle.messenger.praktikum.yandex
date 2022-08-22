@@ -1,0 +1,27 @@
+{
+  "name": "SolMessenger",
+  "version": "0.1.0",
+  "description": "Messenger app",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "rm -rf dist/ && npm run build && node server.js",
+    "build": "rm -rf dist/ && parcel build 'src/pug/*.pug' --public-url ./",
+    "dev": "rm -rf dist/ && parcel src/pug/user-profile.pug -p 3000"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.7.0",
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "author": {
+    "name": "Alexandr Kazakov",
+    "email": "alexandr.kazakov1@gmail.com",
+    "url": "https://github.com/alexandr-kazakov"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

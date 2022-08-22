@@ -1,0 +1,19 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Страница входа'
+  - var pageDescription = 'Войди в мечту'
+  - var pageKeywords = 'Ключевые слова'
+
+block content
+  main.page-wrapper.page-wrapper_enter
+    .enter-box 
+      .enter-box__main
+        h1.enter-box__title Вход
+        +input-box({type: "text", name:"name", placeholder:"Логин", title:"Логин"}).input-box_margin-b-xs
+        +input-box({type: "password", name:"password", placeholder:"Пароль", title:"Пароль"}).input-box_password.input-box_margin-b-xs
+
+      .enter-box__footer
+        +btn({mode: "btn", type: "submit", text: "Авторизоваться"}).btn_theme-primary.btn_full-width.btn_margin-b-xs
+        a(href="#") Нет аккаунта?
+

@@ -1,0 +1,7 @@
+mixin error-box(data)
+  .error-box&attributes(attributes)
+    .error-box__main
+      h1.error-box__title=  data.error 
+      span.error-box__desc= data.desc
+    .error-box__footer 
+      a(href="#") Назад к чатам
