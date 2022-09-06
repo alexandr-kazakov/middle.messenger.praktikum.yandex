@@ -2,10 +2,12 @@
 
 import Block from '../../utils/Block';
 import template from './user-profile.pug';
-import { Button } from '../../components/Button';
+// import { Button } from '../../components/Button';
+import { ButtonSidebar } from '../../components/ButtonSidebar';
 
 interface HomePageProps {
   title: string;
+  userData: object[]
 }
 
 export class HomePage extends Block {
@@ -14,8 +16,7 @@ export class HomePage extends Block {
   }
 
   init() {
-    this.children.button = new Button({
-      label: 'Click me',
+    this.children.buttonSidebar = new ButtonSidebar({
       events: {
         click: () => console.log('clicked'),
       },

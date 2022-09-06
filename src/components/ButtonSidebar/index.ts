@@ -1,14 +1,13 @@
 import Block from '../../utils/Block';
-import template from './button.pug';
+import template from './btn-sidebar.pug';
 
 interface ButtonProps {
-  data: object;
   events: {
-    click: () => void;
+    // click: () => void;
   };
 }
 
-export class Button extends Block {
+export class ButtonSidebar extends Block {
   constructor(props: ButtonProps) {
     super('div', props);
   }

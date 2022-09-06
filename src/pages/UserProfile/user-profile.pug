@@ -1,40 +1,33 @@
-//- extends core/layout.pug
 
-//- block vars
-//-   - var pageTitle = 'Профиль'
-//-   - var pageDescription = 'Профиль пользователя'
-//-   - var pageKeywords = 'Ключевые слова'
-//-   - var userData = [{title: "Почта", value: "pochta@yandex.ru"}, {title: "Логин", value: "ivanivanov"},  {title: "Имя", value: "Иван"},  {title: "Фамилия", value: "Иванов"},  {title: "Имя в чате", value: "Иван"}, {title: "Телефон", value: "+7 (909) 967 30 30"} ]
-
-//- block content
 //-   include includes/btn-sidebar
+| !{buttonSidebar}
 main.page-wrapper.page-wrapper_profile
-  h1 #{title}
-  | !{button}
-  //- .profile-box
-  //-   .profile-box__header
-  //-     img.profile-box__avatar(src="https://via.placeholder.com/130", alt="User avatar")
-  //-     h2.profile-box__user-name Иван
-  //-   .profile-box__main
-  //-     table.table-box.table-box_two-between
-  //-       each item in userData
-  //-         tr
-  //-           td= item.title
-  //-           td= item.value
-  //-       else
-  //-         tr
-  //-           td  Данные пользователя не найдены!
+  //- h1 #{title}
+  //- | !{button}
+  .profile-box
+    .profile-box__header
+      img.profile-box__avatar(src="https://via.placeholder.com/130", alt="User avatar")
+      h2.profile-box__user-name Иван
+    .profile-box__main
+      table.table-box.table-box_two-between
+        each item in userData
+          tr
+            td= item.title
+            td= item.value
+        else
+          tr
+            td  Данные пользователя не найдены!
 
-  //-   .profile-box_footer
-  //-     table.table-box
-  //-       tr
-  //-         td
-  //-           a(href="#") Изменить данные
-  //-       tr
-  //-         td
-  //-           a(href="#") Изменить пароль
-  //-       tr
-  //-         td
-  //-           a.color-red(href="#") Выйти
+    .profile-box_footer
+      table.table-box
+        tr
+          td
+            a(href="#") Изменить данные
+        tr
+          td
+            a(href="#") Изменить пароль
+        tr
+          td
+            a.color-red(href="#") Выйти
 
 

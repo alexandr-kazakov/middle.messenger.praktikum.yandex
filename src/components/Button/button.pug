@@ -1,15 +1,13 @@
-| #{label}
 
-//- mixin btn(data)
-//-   if data.mode === "link"
-//-     a.btn(href= data.link)&attributes(attributes)
-//-       if data.icon
-//-         | !{data.icon}
-//-       span.text= data.text
-//-   else if data.mode === "btn"
-//-     button.btn(type= data.type)&attributes(attributes)
-//-       if data.icon
-//-         | !{data.icon}       
-//-       span.text= data.text
+if data.mode === "link"
+  a.btn(href= data.link, class=(data.mainClasses ? data.mainClasses  : false))
+    if data.icon
+      | !{data.icon}
+    span.text= data.text
+else if data.mode === "btn"
+  button.btn(type= data.type, class=(data.mainClasses ? data.mainClasses  : false))
+    if data.icon
+      | !{data.icon}
+    span.text= data.text
 
 

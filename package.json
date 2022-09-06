@@ -7,8 +7,8 @@
   },
   "scripts": {
     "start": "rm -rf dist/ && npm run build && node server.js",
-    "build": "rm -rf dist/ && parcel build 'src/index.html' --public-url ./",
-    "dev": "parcel src/index.html -p 3000",
+    "build": "rm -rf dist/ && parcel build 'src/*.html' --public-url ./",
+    "dev": "rm -rf dist/ && parcel src/login.html -p 3000",
     "lint:js": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "lint:css": "npx stylelint **/*.scss --fix"
   },
