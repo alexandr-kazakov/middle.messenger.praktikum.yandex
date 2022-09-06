@@ -2,7 +2,7 @@
 
 import Block from '../../utils/Block';
 import template from './login.pug';
-import { Input } from '../../components/Input';
+import { InputBox } from '../../components/InputBox';
 import { Button } from '../../components/Button';
 
 interface LoginPageProps {
@@ -15,17 +15,17 @@ export class LoginPage extends Block {
   }
 
   init() {
-    this.children.inputName = new Input({
+    this.children.inputName = new InputBox({
       data: {type: "text", name:"name", placeholder:"Логин", title:"Логин", mainClasses: "input-box_margin-b-xs"},
       events: {
-        click: () => console.log('clicked'),
+
       },
     });
 
-    this.children.inputPassword = new Input({
+    this.children.inputPassword = new InputBox({
       data: {type: "password", name:"password", placeholder:"Пароль", title:"Пароль", mainClasses: "input-box_password input-box_margin-b-xs"},
       events: {
-        click: () => console.log('clicked'),
+
       },
     });
 
