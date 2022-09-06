@@ -1,32 +1,31 @@
-
 html {
   font-family: sans-serif;
   height: 100%;
-  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  color: #1E1E1E;
-  font-family: 'Roboto','Helvetica', 'Arial', sans-serif;
+  color: #1e1e1e;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
   height: 100%;
   line-height: 1.4;
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-@-ms-viewport {
+@viewport {
   width: device-width;
 }
 
 ::selection {
-  background-color: rgba(124, 159, 248, 0.4);
+  background-color: rgb(124 159 248 / 40%);
   text-shadow: none;
 }
 
@@ -37,19 +36,21 @@ svg:not(:root) {
 a {
   color: $primary;
   text-decoration: none;
-  -webkit-text-decoration-skip: objects;
+  text-decoration-skip: objects;
 
   &:hover {
     color: $primary-hover;
   }
+
   &:active {
   }
+
   &:focus {
     outline: none;
   }
 }
 
-@-webkit-keyframes autofill {
+@keyframes autofill {
   to {
     color: #fff;
     background: transparent;
@@ -57,24 +58,31 @@ a {
 }
 
 input:-webkit-autofill {
-  -webkit-animation-name: autofill;
-  -webkit-animation-fill-mode: both;
+  animation-name: autofill;
+  animation-fill-mode: both;
 }
 
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
   margin: 0;
 }
-input[type='number'] {
-  -moz-appearance: textfield;
+
+input[type="number"] {
+  appearance: textfield;
 }
 
 iframe {
   border: none;
 }
 
-h1,h2,h3,h4,h5,h6,p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -92,4 +100,3 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-

@@ -7,19 +7,23 @@
   },
   "scripts": {
     "start": "rm -rf dist/ && npm run build && node server.js",
-    "build": "rm -rf dist/ && parcel build 'src/pug/*.pug' --public-url ./",
+    "build": "rm -rf dist/ && parcel build 'src/index.html' --public-url ./",
     "dev": "parcel src/index.html -p 3000",
-    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint:js": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
+    "lint:css": "npx stylelint **/*.scss --fix"
   },
   "devDependencies": {
     "@parcel/transformer-pug": "^2.7.0",
     "@parcel/transformer-sass": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "parcel": "^2.7.0",
     "parcel-transformer-pug-precompile": "^1.0.6",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0",
     "typescript": "^4.8.2"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
@@ -29,7 +33,9 @@
     "url": "https://github.com/alexandr-kazakov"
   },
   "dependencies": {
+    "connect-history-api-fallback": "^2.0.0",
     "express": "^4.18.1",
-    "nanoid": "^4.0.0"
+    "nanoid": "^4.0.0",
+    "stylelint-config-standard-scss": "^5.0.0"
   }
 }

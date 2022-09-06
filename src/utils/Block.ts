@@ -40,6 +40,8 @@ class Block {
 
     this._registerEvents(eventBus);
 
+    console.log('props', this.props);
+    console.log('children', this.children);
     eventBus.emit(Block.EVENTS.INIT);
   }
 
