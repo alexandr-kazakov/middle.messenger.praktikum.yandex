@@ -3,7 +3,11 @@ import template from './input-box.pug';
 import { Input } from '../../components/Input';
 
 interface InputBoxProps {
-  data: object,
+  type: any,
+  name:any,
+  placeholder:any,
+  title:any,
+  mainClasses:any
   events: {
     // click: () => void;
   };
@@ -11,14 +15,19 @@ interface InputBoxProps {
 
 export class InputBox extends Block {
   constructor(props: InputBoxProps) {
-    super('div', props);
+    super(props);
   }
 
   init() {
+    console.log(444, JSON.stringify(this.props.name));
     this.children.input = new Input({
-      data: {type: "text", name:"name", placeholder:"Логин", title:"Логин", mainClasses: "input-box_margin-b-xs"},
+      type: this.props.type,
+      name: this.props.name,
+      placeholder: this.props.placeholder,
+      title: this.props.title,
+      mainClasses: "",
       events: {
-        focus: () => console.log('focusss'),
+        blur: () => {},
       },
     });
   }

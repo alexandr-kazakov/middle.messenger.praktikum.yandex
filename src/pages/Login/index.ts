@@ -11,19 +11,22 @@ interface LoginPageProps {
 
 export class LoginPage extends Block {
   constructor(props: LoginPageProps) {
-    super('div', props);
+    super(props);
   }
 
   init() {
     this.children.inputName = new InputBox({
-      data: {type: "text", name:"name", placeholder:"Логин", title:"Логин", mainClasses: "input-box_margin-b-xs"},
+      type: "text",
+      name:"name",
+      placeholder:"Логин",
+      title:"Логин",
+      mainClasses: "input-box_margin-b-xs",
       events: {
-
       },
     });
 
     this.children.inputPassword = new InputBox({
-      data: {type: "password", name:"password", placeholder:"Пароль", title:"Пароль", mainClasses: "input-box_password input-box_margin-b-xs"},
+      type: "password", name:"password", placeholder:"Пароль", title:"Пароль", mainClasses: "input-box_password input-box_margin-b-xs",
       events: {
 
       },

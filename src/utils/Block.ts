@@ -23,13 +23,12 @@ class Block {
    *
    * @returns {void}
    */
-  constructor(tagName = "div", propsWithChildren: any = {}) {
+  constructor(propsWithChildren: any = {}) {
     const eventBus = new EventBus();
 
     const { props, children } = this._getChildrenAndProps(propsWithChildren);
 
     this._meta = {
-      tagName,
       props
     };
 

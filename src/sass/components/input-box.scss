@@ -40,54 +40,7 @@
     top: 0;
   }
 
-  &__field {
-    border: none;
-    border-bottom: 1px solid $primary;
-    background-color: #fff;
-    color: $black;
-    display: inline-block;
-    font-size: 13px;
-    height: 30px;
-    line-height: 1.3;
-    letter-spacing: 0.3px;
-    width: 100%;
-    appearance: none;
 
-    &::placeholder {
-      color: $gray;
-      font-size: 13px;
-    }
-
-    &:focus {
-      border-color: $primary;
-      background-color: #fff;
-      outline: none;
-    }
-
-    &:not(:placeholder-shown) {
-      ~ .input-box__title {
-        display: block;
-      }
-    }
-
-    .error & {
-      color: $danger;
-    }
-
-    &:disabled {
-      background-color: #fff;
-      color: #e8e9ec;
-      border-color: $gray;
-
-      &::placeholder {
-        color: #e8e9ec;
-      }
-    }
-
-    .input-box_icon & {
-      padding-left: 65px;
-    }
-  }
 
   &.error {
     .input-box__error-message {
