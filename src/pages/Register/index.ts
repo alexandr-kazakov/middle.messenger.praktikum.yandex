@@ -4,8 +4,9 @@ import Block from '../../utils/Block';
 import template from './login.pug';
 import { InputBox } from '../../components/InputBox';
 import { Button } from '../../components/Button';
+import { nanoid } from 'nanoid';
 
-interface LoginPageProps {
+interface RegisterageProps {
   title: string,
   authStatus: string,
   authMessage: string,
@@ -15,7 +16,7 @@ interface LoginPageProps {
 }
 
 export class LoginPage extends Block {
-  constructor(props: LoginPageProps) {
+  constructor(props: RegisterageProps) {
     super(props);
   }
 
@@ -26,9 +27,9 @@ export class LoginPage extends Block {
       placeholder: "Логин",
       title: "Логин",
       mainClasses: "input-box_margin-b-xs",
+      id: nanoid(6),
       errorMessage: "от 3 до 20 символов, латиница",
       isValid: false,
-      value: null,
       errorMessageVisibility: false,
       events: {
       },
@@ -40,14 +41,15 @@ export class LoginPage extends Block {
       placeholder: "Пароль",
       title: "Пароль",
       mainClasses: "input-box_password input-box_margin-b-xs",
+      id: nanoid(6),
       errorMessage: "от 8 до 40 символов",
       isValid: false,
-      value: null,
       errorMessageVisibility: false,
       events: {
 
       },
     });
+
 
     this.children.loginButton = new Button({
       mode: "btn",
@@ -67,6 +69,8 @@ export class LoginPage extends Block {
     const submitData = {}
 
     Object.keys(this.children).forEach(key => {
+      console.log('element111', this.children[key].props.isValid);
+
       if (this.children[key] instanceof InputBox) {
         submitData[key] = this.children[key].props.value;
 

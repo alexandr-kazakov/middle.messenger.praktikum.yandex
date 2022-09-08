@@ -1,7 +1,7 @@
-.input-box(class=(mainClasses ? mainClasses  : false))
+.input-box(class=!isValid && errorMessageVisibility ? 'error' : false, class= mainClasses ? mainClasses : false, id= id)
   label.input-box__label
     | !{input}
     span.input-box__title= title
-  span.input-box__error-message Сообщение об ошибке
+  span.input-box__error-message= errorMessage
 
 

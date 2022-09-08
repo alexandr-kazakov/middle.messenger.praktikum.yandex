@@ -2,7 +2,10 @@ import Block from '../../utils/Block';
 import template from './button.pug';
 
 interface ButtonProps {
-  data: object;
+  mode: string,
+  type: string,
+  text: string
+  mainClasses: string,
   events: {
     click: () => void;
   };

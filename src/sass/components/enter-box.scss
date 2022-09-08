@@ -20,4 +20,18 @@
   &__footer {
     text-align: center;
   }
+
+  &__message {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 10px;
+
+    &.success {
+      color: $success;
+    }
+
+    &.error {
+      color: $danger;
+    }
+  }
 }

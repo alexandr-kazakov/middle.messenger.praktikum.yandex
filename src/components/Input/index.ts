@@ -2,36 +2,35 @@ import Block from '../../utils/Block';
 import template from './input.pug';
 
 interface InputProps {
-  type: any,
-  name:any,
-  placeholder:any,
-  title:any,
-  mainClasses:any,
+  type: string,
+  name: string,
+  placeholder: string,
+  title: string,
+  mainClasses: string,
   events: {
-    blur: () => void;
-    // click: () => void;
+    blur: (event: object) => void;
   };
 }
 
 export class Input extends Block {
   constructor(props: InputProps) {
-    super({...props,
-      events: {
-      blur: () => this.onBlur(),
-    }});
+    super({
+      ...props,
+    });
+
+
   }
 
-  validateName(event:any): boolean {
-    console.log(event,event.target.value);
-    const reg = /^[a-zA-Z][\p{Cyrillic}]+$/;
-    const response = reg.test(event.target.value);
-    return response;
-  }
+  // this.validateResponde() {
 
-  public onBlur() {
-    console.log(555555, JSON.stringify(this.props));
-    console.log('tuk-tuk');
-  }
+  // }
+
+  // public onBlur() {
+  //   console.log(555555, JSON.stringify(this.props));
+  //   console.log('tuk-tuk');
+  // }
+
+
 
   render() {
     return this.compile(template, this.props);

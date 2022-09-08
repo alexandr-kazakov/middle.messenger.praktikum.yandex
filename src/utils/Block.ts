@@ -60,7 +60,7 @@ class Block {
   }
 
   _addEvents() {
-    const {events = {}} = this.props as { events: Record<string, () =>void> };
+    const { events = {} } = this.props as { events: Record<string, () => void> };
 
     Object.keys(events).forEach(eventName => {
       this._element?.addEventListener(eventName, events[eventName]);
@@ -87,13 +87,13 @@ class Block {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  protected init() {}
+  protected init() { }
 
   _componentDidMount() {
     this.componentDidMount();
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   public dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
@@ -126,7 +126,11 @@ class Block {
   private _render() {
     const fragment = this.render();
 
-    this._element = fragment.firstElementChild as HTMLElement;
+    const newElement = fragment.firstElementChild as HTMLElement;
+
+    this._element?.replaceWith(newElement);
+
+    this._element = newElement;
 
     // this._element!.innerHTML = '';
 

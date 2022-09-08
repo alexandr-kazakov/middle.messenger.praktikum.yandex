@@ -1,13 +1,13 @@
 
-if data.mode === "link"
-  a.btn(href= data.link, class=(data.mainClasses ? data.mainClasses  : false))
-    if data.icon
-      | !{data.icon}
+if mode === "link"
+  a.btn(href= data.link, class=(mainClasses ? mainClasses  : false))
+    if icon
+      | !{icon}
     span.text= data.text
-else if data.mode === "btn"
-  button.btn(type= data.type, class=(data.mainClasses ? data.mainClasses  : false))
-    if data.icon
-      | !{data.icon}
-    span.text= data.text
+else if mode === "btn"
+  button.btn(type= type, class=(mainClasses ? mainClasses  : false))
+    if icon
+      | !{icon}
+    span.text= text
 
 
