@@ -2,7 +2,6 @@
 
 import Block from '../../utils/Block';
 import template from './chat.pug';
-import { ChatSidebar } from '../../components/ChatSidebar';
 import { ChatMain } from '../../components/chatMain';
 import { Button } from '../../components/Button';
 
