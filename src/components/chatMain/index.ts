@@ -3,10 +3,7 @@ import { Input } from '../../components/Input';
 import template from './chat-main.pug';
 
 interface ChatMainProps {
-  chatData: object,
-  events: {
-    blur: (event: object) => void;
-  };
+  chatData: Record<string, any>,
 }
 
 export class ChatMain extends Block {

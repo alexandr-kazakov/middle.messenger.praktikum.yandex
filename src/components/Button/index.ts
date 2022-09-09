@@ -6,7 +6,7 @@ interface ButtonProps {
   type: string,
   text: string
   mainClasses: string,
-  events: {
+  events?: {
     click: () => void;
   };
 }

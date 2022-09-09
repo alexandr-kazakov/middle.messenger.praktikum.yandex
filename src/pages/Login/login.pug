@@ -4,13 +4,10 @@ main.page-wrapper.page-wrapper_enter
       h1.enter-box__title !{title}
       | !{inputName}
       | !{inputPassword}
-      //- +input-box({type: "text", name:"name", placeholder:"Логин", title:"Логин"}).input-box_margin-b-xs
-      //- +input-box({type: "password", name:"password", placeholder:"Пароль", title:"Пароль"}).input-box_password.input-box_margin-b-xs
 
     .enter-box__footer
       | !{loginButton}
       span.enter-box__message(class=authStatus? authStatus : false) !{authMessage}
-      //- +btn({mode: "btn", type: "submit", text: "Авторизоваться"}).btn_theme-primary.btn_full-width.btn_margin-b-xs
       a(href="#") Нет аккаунта?
 
 

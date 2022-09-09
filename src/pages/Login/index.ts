@@ -9,9 +9,6 @@ interface LoginPageProps {
   title: string,
   authStatus: string,
   authMessage: string,
-  events: {
-    //  submit: () => void;
-  };
 }
 
 export class LoginPage extends Block {
@@ -30,8 +27,6 @@ export class LoginPage extends Block {
       isValid: false,
       value: null,
       errorMessageVisibility: false,
-      events: {
-      },
     });
 
     this.children.inputPassword = new InputBox({
@@ -40,13 +35,10 @@ export class LoginPage extends Block {
       placeholder: "Пароль",
       title: "Пароль",
       mainClasses: "input-box_password input-box_margin-b-xs",
-      errorMessage: "от 8 до 40 символов",
+      errorMessage: "от 8 до 40 символов, заглавная, цифра",
       isValid: false,
       value: null,
       errorMessageVisibility: false,
-      events: {
-
-      },
     });
 
     this.children.loginButton = new Button({
@@ -63,8 +55,8 @@ export class LoginPage extends Block {
   }
 
   submit() {
-    let validateError: boolean;
-    const submitData = {}
+    let validateError = false;
+    const submitData: Record<string, string> = {}
 
     Object.keys(this.children).forEach(key => {
       if (this.children[key] instanceof InputBox) {

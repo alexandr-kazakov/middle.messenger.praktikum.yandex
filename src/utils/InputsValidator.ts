@@ -1,25 +1,26 @@
+
 export default class InputsValidator {
-  type: string;
-  data: string;
+  private _type: string;
+  private _data: string;
 
   constructor(type: string, data: string) {
-    this.type = type;
-    this.data = data;
+    this._type = type;
+    this._data = data;
   }
 
   isValid(): boolean {
     let pattern;
 
-    switch (this.type) {
-      case 'userName':
-        pattern = /[A-ZА-Я][a-zа-я\-]*/
+    switch (this._type) {
+      case 'first_name': case 'second_name':
+        pattern = /[A-ZА-Я][a-zа-я-]*/
         break;
 
-      case 'userEmail':
+      case 'email':
         pattern = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z](?:[a-z-]*[a-z])?\.)+[a-z](?:[a-z-]*[a-z])?$/
         break;
 
-      case 'userPhone':
+      case 'phone':
         pattern = /\+?[0-9]{10,15}/;
         break;
 
@@ -28,10 +29,10 @@ export default class InputsValidator {
         break;
 
       case 'login':
-        pattern = /[A-Za-z0-9_\-]{3,20}/;
+        pattern = /[A-Za-z0-9_-]{3,20}/;
         break;
 
-      case 'userMessage':
+      case 'message':
         pattern = /([^\s])/;
         break;
 
@@ -39,6 +40,6 @@ export default class InputsValidator {
         return false
     }
 
-    return pattern.test(this.data);
+    return pattern.test(this._data);
   }
 }

@@ -13,9 +13,6 @@ interface InputBoxProps {
   isValid: boolean,
   value: any,
   errorMessageVisibility: boolean,
-  events: {
-
-  };
 }
 
 

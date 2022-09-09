@@ -4,8 +4,7 @@ import Block from '../../utils/Block';
 import template from './chat.pug';
 import { ChatSidebar } from '../../components/ChatSidebar';
 import { ChatMain } from '../../components/chatMain';
-// import { chatMain } from '../../components/chatMain';
-// import { nanoid } from 'nanoid';
+import { Button } from '../../components/Button';
 
 interface ChatPageProps {
   events: {
@@ -25,6 +24,10 @@ export class ChatPage extends Block {
         { ownerName: 'Вася', lastMessagePreview: "Привет! Предлагаю...", time: "12:49", unreadMessageCounter: "1", ownerPicture: "https://via.placeholder.com/100/16c0b0/ffffff", messages: [{ time: "12:49", data: "Привет! Предлагаю заработок в интернете, специальных знаний не требуется. Просто нажимаешь на кнопку Бабло и получаешь от $4000 в день." }] }
       ]
     });
+    this.children.ChatMain = new ChatMain({
+      chatData: { ownerName: 'Вася', lastMessagePreview: "Привет! Предлагаю...", time: "12:49", unreadMessageCounter: "1", ownerPicture: "https://via.placeholder.com/100/16c0b0/ffffff", messages: [{ time: "12:49", data: "Привет! Предлагаю заработок в интернете, специальных знаний не требуется. Просто нажимаешь на кнопку Бабло и получаешь от $4000 в день." }] }
+    });
+
     this.children.ChatMain = new ChatMain({
       chatData: { ownerName: 'Вася', lastMessagePreview: "Привет! Предлагаю...", time: "12:49", unreadMessageCounter: "1", ownerPicture: "https://via.placeholder.com/100/16c0b0/ffffff", messages: [{ time: "12:49", data: "Привет! Предлагаю заработок в интернете, специальных знаний не требуется. Просто нажимаешь на кнопку Бабло и получаешь от $4000 в день." }] }
     });

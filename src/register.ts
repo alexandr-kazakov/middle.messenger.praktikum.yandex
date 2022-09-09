@@ -1,14 +1,17 @@
-import { LoginPage } from './pages/Login';
-import { Button } from './components/Button';
+import { RegisterPage } from './pages/Register';
 
 window.addEventListener('DOMContentLoaded', () => {
   const root = document.querySelector('#app')!;
 
-  const loginPage = new LoginPage({ title: 'Вход' });
+  const registerPage = new RegisterPage({
+    title: 'Регистрация',
+    authStatus: '',
+    authMessage: '',
+  });
 
-  root.append(loginPage.getContent()!);
+  root.append(registerPage.getContent()!);
 
-  loginPage.dispatchComponentDidMount();
+  registerPage.dispatchComponentDidMount();
 });
 
 

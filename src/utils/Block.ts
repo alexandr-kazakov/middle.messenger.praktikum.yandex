@@ -15,7 +15,7 @@ class Block {
   public children: Record<string, Block>;
   private eventBus: () => EventBus;
   private _element: HTMLElement | null = null;
-  private _meta: { tagName: string; props: any; };
+  private _meta: { props: any; };
 
   /** JSDoc
    * @param {string} tagName
@@ -44,7 +44,7 @@ class Block {
     eventBus.emit(Block.EVENTS.INIT);
   }
 
-  _getChildrenAndProps(childrenAndProps: any) {
+  private _getChildrenAndProps(childrenAndProps: any) {
     const props: Record<string, any> = {};
     const children: Record<string, Block> = {};
 
@@ -59,7 +59,7 @@ class Block {
     return { props, children };
   }
 
-  _addEvents() {
+  private _addEvents() {
     const { events = {} } = this.props as { events: Record<string, () => void> };
 
     Object.keys(events).forEach(eventName => {
@@ -74,7 +74,7 @@ class Block {
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
-  _createResources() {
+  private _createResources() {
     // const { tagName } = this._meta;
     // this._element = this._createDocumentElement(tagName);
   }
@@ -87,13 +87,13 @@ class Block {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  protected init() { }
+  protected init() { console.log('protected init event') }
 
   _componentDidMount() {
     this.componentDidMount();
   }
 
-  componentDidMount() { }
+  componentDidMount() { console.log('componentDidMount event') }
 
   public dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
@@ -177,7 +177,7 @@ class Block {
   }
 
   _makePropsProxy(props: any) {
-    // Ещё один способ передачи this, но он больше не применяется с приходом ES6+
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this;
 
     return new Proxy(props, {
@@ -190,8 +190,6 @@ class Block {
 
         target[prop] = value;
 
-        // Запускаем обновление компоненты
-        // Плохой cloneDeep, в следующей итерации нужно заставлять добавлять cloneDeep им самим
         self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
         return true;
       },
@@ -202,7 +200,6 @@ class Block {
   }
 
   _createDocumentElement(tagName: string) {
-    // Можно сделать метод, который через фрагменты в цикле создаёт сразу несколько блоков
     return document.createElement(tagName);
   }
 

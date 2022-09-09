@@ -5,14 +5,14 @@ import template from './user-profile.pug';
 // import { Button } from '../../components/Button';
 import { ButtonSidebar } from '../../components/ButtonSidebar';
 
-interface HomePageProps {
+interface UserProfileProps {
   title: string;
-  userData: object[]
+  userData: Record<string, string>[];
 }
 
-export class HomePage extends Block {
-  constructor(props: HomePageProps) {
-    super('div', props);
+export class UserProfilePage extends Block {
+  constructor(props: UserProfileProps) {
+    super({ ...props });
   }
 
   init() {

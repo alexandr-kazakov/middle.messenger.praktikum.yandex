@@ -3,10 +3,7 @@ import { Input } from '../../components/Input';
 import template from './chat-sidebar.pug';
 
 interface ChatSidebarProps {
-  chatsList: object[],
-  events: {
-    blur: (event: object) => void;
-  };
+  chatsList: Record<string, any>[],
 }
 
 export class ChatSidebar extends Block {
