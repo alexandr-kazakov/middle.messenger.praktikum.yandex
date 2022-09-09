@@ -9,6 +9,7 @@
     "block-no-empty": null
   },
   "ignoreFiles": [
-    "/dist/**/*.css"
-  ]
+    "build/*",
+    "dist/*"
+  ],
 }
