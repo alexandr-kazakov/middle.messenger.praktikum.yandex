@@ -1,31 +1,33 @@
+type Handler = (...args: unknown[]) => void;
+
 export class EventBus {
-    private readonly listeners: Record<string, Array<() => void>> = {};
+  private readonly listeners: Record<string, Handler[]> = {};
 
-    on(event:string, callback: () => void) {
-      if (!this.listeners[event]) {
-        this.listeners[event] = [];
-      }
-
-      this.listeners[event].push(callback);
+  on(event: string, callback: Handler) {
+    if (!this.listeners[event]) {
+      this.listeners[event] = [];
     }
 
-    off(event:string, callback: () => void) {
-      if (!this.listeners[event]) {
-        throw new Error(`Нет события: ${event}`);
-      }
-
-      this.listeners[event] = this.listeners[event].filter(
-        listener => listener !== callback
-      );
-    }
-
-    emit(event:string, ...args: []) {
-      if (!this.listeners[event]) {
-        throw new Event(`Нет события: ${event}`);
-      }
-
-      this.listeners[event].forEach(listener => {
-        listener(...args);
-      });
-    }
+    this.listeners[event].push(callback);
   }
+
+  off(event: string, callback: Handler) {
+    if (!this.listeners[event]) {
+      throw new Error(`Нет события: ${event}`);
+    }
+
+    this.listeners[event] = this.listeners[event].filter(
+      listener => listener !== callback
+    );
+  }
+
+  emit(event: string, ...args: unknown[]) {
+    if (!this.listeners[event]) {
+      throw new Event(`Нет события: ${event}`);
+    }
+
+    this.listeners[event].forEach(listener => {
+      listener(...args);
+    });
+  }
+}
