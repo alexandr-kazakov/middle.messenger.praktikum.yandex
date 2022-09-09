@@ -1,7 +1,7 @@
 import Block from '../../utils/Block';
 import template from './input-box.pug';
 import { Input } from '../../components/Input';
-import InputsValidator from '../../utils/inputsValidator';
+import InputsValidator from '../../utils/InputsValidator';
 
 interface InputBoxProps {
   type: string,
