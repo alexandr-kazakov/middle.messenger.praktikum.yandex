@@ -9,6 +9,6 @@
     "block-no-empty": null
   },
   "ignoreFiles": [
-    "dist"
+    "/dist"
   ]
 }
