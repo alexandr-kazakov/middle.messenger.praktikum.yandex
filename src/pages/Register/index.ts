@@ -1,7 +1,7 @@
 
 
 import Block from '../../utils/Block';
-import template from './Register.pug';
+import template from './register.pug';
 import { InputBox } from '../../components/InputBox';
 import { Button } from '../../components/Button';
 
