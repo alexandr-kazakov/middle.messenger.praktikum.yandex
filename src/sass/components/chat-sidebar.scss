@@ -1,0 +1,13 @@
+.chat-sidebar {
+  background-color: #fbfbfb;
+  border-right: 1px solid $gray-light;
+  height: 100%;
+  max-width: 310px;
+  padding-top: 10px;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}

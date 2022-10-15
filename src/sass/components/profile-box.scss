@@ -1,25 +1,25 @@
 .profile-box {
+  width: 100%;
+
+  &__header {
+    margin-bottom: 50px;
+  }
+
+  &__avatar {
+    background-color: $gray;
+    border-radius: 100%;
+    display: block;
+    height: auto;
+    max-width: 130px;
+    margin: 0 auto 20px;
     width: 100%;
+  }
 
-    &__header {
-        margin-bottom: 50px;
-    }
+  &__user-name {
+    text-align: center;
+  }
 
-    &__avatar {
-        background-color: $gray;
-        border-radius: 100%;
-        display: block;
-        height: auto;
-        max-width: 130px;
-        margin: 0 auto 20px auto;
-        width: 100%; 
-    }
-
-    &__user-name {
-        text-align: center;
-    }
-
-    &__main {
-        margin-bottom: 50px;
-    }
+  &__main {
+    margin-bottom: 50px;
+  }
 }

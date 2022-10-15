@@ -1,6 +1,6 @@
 .clearfix {
-  &:after {
-    content: '';
+  &::after {
+    content: "";
     display: table;
     clear: both;
   }
@@ -13,11 +13,18 @@
 .align-i-c {
   align-items: center;
 }
+
 .clear-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
   outline: none;
+  padding: 0;
+}
+
+.clear-list {
+  list-style: none;
+  margin: 0;
   padding: 0;
 }
 
@@ -89,6 +96,7 @@
 .text-align-c {
   text-align: center;
 }
+
 .text-align-r {
   text-align: right;
 }
@@ -99,6 +107,7 @@
 
 .color-red {
   color: $danger;
+
   &:hover {
     color: $danger;
   }
