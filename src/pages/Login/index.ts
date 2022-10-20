@@ -4,6 +4,8 @@ import Block from '../../utils/Block';
 import template from './login.pug';
 import { InputBox } from '../../components/InputBox';
 import { Button } from '../../components/Button';
+import { SigninData } from '../../api/AuthAPI';
+import AuthController from '../../controllers/AuthController';
 
 interface LoginPageProps {
   title: string,
@@ -52,6 +54,21 @@ export class LoginPage extends Block {
         },
       },
     });
+
+    const puk = new Button({
+      mode: "btn",
+      type: "button",
+      text: "Выйти",
+      mainClasses: "btn_theme-primary btn_full-width btn_margin-b-xs",
+      events: {
+        click: () => {
+          AuthController.logout();
+        },
+      },
+    });
+    console.log(5552222, puk);
+
+    this.children.exitButton = puk
   }
 
   submit() {
@@ -60,7 +77,7 @@ export class LoginPage extends Block {
 
     Object.keys(this.children).forEach(key => {
       if (this.children[key] instanceof InputBox) {
-        submitData[key] = this.children[key].props.value;
+        submitData[this.children[key].props.name] = this.children[key].props.value;
 
 
         if (!this.children[key].props.isValid) {
@@ -78,6 +95,7 @@ export class LoginPage extends Block {
     }
 
     console.log('submitData: ', submitData);
+    AuthController.signin(submitData as SigninData);
   }
 
   render() {

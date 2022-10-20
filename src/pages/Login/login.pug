@@ -7,8 +7,9 @@ main.page-wrapper.page-wrapper_enter
 
     .enter-box__footer
       | !{loginButton}
+      | !{exitButton}
       span.enter-box__message(class=authStatus? authStatus : false) !{authMessage}
-      a(href="#") Нет аккаунта?
+      a(href="/register") Нет аккаунта?
 
 
 

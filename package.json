@@ -6,9 +6,9 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "rm -rf dist/ && npm run build && node server.js",
-    "build": "rm -rf dist/ && parcel build 'src/*.html' --public-url ./",
-    "dev": "rm -rf dist/ && parcel src/chat.html -p 3000",
+    "start": "rimraf -rf dist/ && npm run build && node server.js",
+    "build": "rimraf -rf dist/ && parcel build 'src/*.html' --public-url ./",
+    "dev": "rimraf -rf dist/ && parcel src/index.html -p 3000",
     "lint:js": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "lint:css": "npx stylelint **/*.scss --fix"
   },

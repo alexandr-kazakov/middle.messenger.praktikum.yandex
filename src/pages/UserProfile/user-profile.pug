@@ -1,3 +1,5 @@
+- var author = userData;
+
 main.page-wrapper.page-wrapper_profile
   | !{buttonSidebar}
   .profile-box
@@ -7,9 +9,7 @@ main.page-wrapper.page-wrapper_profile
     .profile-box__main
       table.table-box.table-box_two-between
         each item in userData
-          tr
-            td= item.title
-            td= item.value
+          span= item
         else
           tr
             td  Данные пользователя не найдены!
