@@ -1,5 +1,3 @@
-- var author = userData;
-
 main.page-wrapper.page-wrapper_profile
   | !{buttonSidebar}
   .profile-box
@@ -7,12 +5,11 @@ main.page-wrapper.page-wrapper_profile
       img.profile-box__avatar(src="https://via.placeholder.com/130", alt="User avatar")
       h2.profile-box__user-name Иван
     .profile-box__main
-      table.table-box.table-box_two-between
+      .table-box.table-box_two-between
         each item in userData
-          span= item
+          | !{item}
         else
-          tr
-            td  Данные пользователя не найдены!
+          | Данные пользователя не найдены!
 
     .profile-box_footer
       table.table-box

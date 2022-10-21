@@ -4,7 +4,7 @@ import Block from '../../utils/Block';
 import template from './user-profile.pug';
 // import { Button } from '../../components/Button';
 import { ButtonSidebar } from '../../components/ButtonSidebar';
-// import { withStore } from '../../utils/Store';
+import { withStore } from '../../utils/Store';
 // import AuthController from '../../controllers/AuthController';
 import { User } from '../../api/AuthAPI';
 import { ProfileItem } from '../../components/ProfileItem';
@@ -16,8 +16,7 @@ type UserProfileProps = User
 const userDataArray = ['id', 'first_name', 'second_name', 'display_name', 'login', 'avatar', 'email', 'phone'] as Array<keyof UserProfileProps>;
 
 
-
-export class UserProfilePage extends Block {
+class UserProfilePageBase extends Block {
   // constructor(props: UserProfileProps) {
   //   super(props);
   // }
@@ -34,16 +33,16 @@ export class UserProfilePage extends Block {
     });
   }
 
-  // protected componentDidUpdate(oldProps: UserProfileProps, newProps: UserProfileProps): boolean {
+  protected componentDidUpdate(oldProps: UserProfileProps, newProps: UserProfileProps): boolean {
 
-  //   (this.children.fields as ProfileItem[]).forEach((field, i) => {
-  //     console.log(4747474747474747);
+    (this.children.fields as ProfileItem[]).forEach((field, i) => {
+      console.log(4747474747474747);
 
-  //     field.setProps({ value: newProps[userDataArray[i]] });
-  //   });
+      field.setProps({ value: newProps[userDataArray[i]] });
+    });
 
-  //   return false;
-  // }
+    return false;
+  }
 
   render() {
     return this.compile(template, this.props);
@@ -51,6 +50,6 @@ export class UserProfilePage extends Block {
 }
 
 
-// const withUser = withStore((state) => ({ ...state.user }))
+const withUser = withStore((state) => ({ ...state.user }))
 
-// export const UserProfilePage = withUser(UserProfilePageBase);
+export const UserProfilePage = withUser(UserProfilePageBase);

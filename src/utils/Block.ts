@@ -143,7 +143,11 @@ class Block {
     const contextAndStubs = { ...context };
 
     Object.entries(this.children).forEach(([name, component]) => {
-      contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
+      if (Array.isArray(component)) {
+        contextAndStubs[name] = component.map(child => `<div data-id="${child.id}"></div>`)
+      } else {
+        contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
+      }
     });
 
     const html = template(contextAndStubs);
@@ -152,7 +156,7 @@ class Block {
 
     temp.innerHTML = html;
 
-    Object.entries(this.children).forEach(([_, component]) => {
+    const replaceStub = (component: Block) => {
       const stub = temp.content.querySelector(`[data-id="${component.id}"]`);
 
       if (!stub) {
@@ -162,7 +166,14 @@ class Block {
       component.getContent()?.append(...Array.from(stub.childNodes));
 
       stub.replaceWith(component.getContent()!);
+    }
 
+    Object.entries(this.children).forEach(([_, component]) => {
+      if (Array.isArray(component)) {
+        component.forEach(replaceStub);
+      } else {
+        replaceStub(component);
+      }
     });
 
     return temp.content;
