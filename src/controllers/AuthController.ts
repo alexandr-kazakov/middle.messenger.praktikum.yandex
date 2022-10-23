@@ -12,10 +12,7 @@ export class AuthController {
   async signin(data: SigninData) {
     console.log(100000000000);
     try {
-      console.log(1111111111111);
-
       await this.api.signin(data);
-      console.log(2222222222222222);
       router.go('/profile');
     } catch (e: any) {
       console.error(e);

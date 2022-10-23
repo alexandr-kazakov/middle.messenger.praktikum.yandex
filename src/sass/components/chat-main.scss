@@ -18,8 +18,12 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
     list-style: none;
+    max-height: 100%;
     margin: 0;
+    overflow-y: scroll;
     padding: 0;
   }
 

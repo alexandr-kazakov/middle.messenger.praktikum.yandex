@@ -20,7 +20,7 @@ export class ChatPage extends Block {
   protected init() {
     this.children.chatSidebar = new ChatSidebar({ isLoaded: false });
 
-    // this.children.ChatMain = new ChatMain({});
+    this.children.ChatMain = new ChatMain({});
 
     ChatsController.fetchChats().finally(() => {
       (this.children.chatSidebar as Block).setProps({

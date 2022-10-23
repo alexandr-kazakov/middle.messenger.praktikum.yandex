@@ -1,12 +1,12 @@
 import Block from '../../utils/Block';
 import { Input } from '../../components/Input';
 import template from './chat-sidebar.pug';
-
 import { Chat } from '../Chat';
 import { withStore } from '../../utils/Store';
 import { ChatInfo } from '../../api/ChatsAPI';
 import ChatsController from '../../controllers/ChatsController';
 import MessagesController from '../../controllers/MessagesController';
+import { Link } from '../Link';
 
 // interface ChatSidebarProps {
 //   chatsList: Record<string, any>[],
@@ -45,12 +45,15 @@ export class ChatSidebarBase extends Block {
   protected init() {
     this.children.chats = this.createChats(this.props);
 
+    this.children.profileLink = new Link({ to: '/profile', label: 'Профиль >', classes: "link_sidebar" });
+
+
     this.children.input = new Input({
       type: 'text',
       name: 'search',
       placeholder: 'Поиск',
       title: "Поиск",
-      mainClasses: "gray-theme",
+      mainClasses: "gray-theme input_margin-b-md",
       events: {
         blur: () => {
           console.log('blur')
@@ -60,6 +63,10 @@ export class ChatSidebarBase extends Block {
 
 
     // this.children.profileLink = new Link({ to: '/profile', label: 'Профиль' });
+  }
+
+  navigate(to: string) {
+    this.props.router.go(to);
   }
 
 
@@ -80,7 +87,7 @@ export class ChatSidebarBase extends Block {
         }
       });
     })
-    console.log(555555, test)
+
     return test
   }
 

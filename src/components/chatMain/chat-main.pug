@@ -1,18 +1,24 @@
+
 .chat-main
   header.chat-main__header
     .chat-main__companion
-      img.chat-main__companion-picture(src=chatData.ownerPicture)
-      .chat-main__companion-name= chatData.ownerName
+      //- img.chat-main__companion-picture(src=chatData.ownerPicture)
+      //- .chat-main__companion-name= chatData.ownerName
 
-  ul.chat-main__list
-    each item in chatData.messages
-      li.chat-main__list-item
-        .message-box
-         .message-box__data= item.data
-         .message-box__time= item.time
+      //- li.chat-main__list-item
+      //-   .message-box
+      //-    .message-box__data= item.data
+      //-    .message-box__time= item.time
 
+  .chat-main__list
+    each item in messages
+      | !{item}
+    else
+      | Сообщения не найдены!
 
   footer.chat-main__footer
     | !{input}
-    button(type="button") Отправить
-
+    | !{button}
+//- if selectedChat
+//- else
+//-   |  Выберете чат
