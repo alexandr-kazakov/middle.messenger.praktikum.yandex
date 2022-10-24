@@ -9,9 +9,8 @@ function isEqual(lhs: string, rhs: string): boolean {
 }
 
 function render(query: string, block: Block) {
-  console.log('start renderrender')
   const root = document.querySelector(query);
-  console.log('renderrender')
+
   if (root === null) {
     throw new Error(`root not found by selector "${query}"`);
   }
@@ -41,13 +40,10 @@ class Route {
   }
 
   render() {
-    console.log('start render base')
     if (!this.block) {
-      console.log('start render base 1111')
       this.block = new this.blockClass({});
-      console.log('start render base 2222')
+
       render(this.query, this.block);
-      console.log('start render base 2222')
       return;
     }
   }
@@ -77,12 +73,9 @@ export class Router {
   }
 
   public go(pathname: string) {
-    console.log(8888888888);
-
     this.history.pushState({}, '', pathname);
-    console.log(999999999);
+
     this._onRoute(pathname);
-    console.log(10101010101);
   }
 
   public back() {
@@ -105,20 +98,18 @@ export class Router {
 
   private _onRoute(pathname: string) {
     const route = this.getRoute(pathname);
-    console.log(111111222222);
 
     if (!route) {
       return;
     }
-    console.log(1111113333333);
+
     if (this.currentRoute && this.currentRoute !== route) {
       this.currentRoute.leave();
     }
-    console.log(11111144444444);
+
     this.currentRoute = route;
-    console.log(111111555555555);
+
     route.render();
-    console.log(111111666666666);
   }
 
   private getRoute(pathname: string) {

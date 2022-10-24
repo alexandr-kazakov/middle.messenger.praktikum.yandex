@@ -2,14 +2,12 @@
 
 import Block from '../../utils/Block';
 import template from './user-profile.pug';
-// import { Button } from '../../components/Button';
+import { Button } from '../../components/Button';
 import { ButtonSidebar } from '../../components/ButtonSidebar';
 import { withStore } from '../../utils/Store';
-// import AuthController from '../../controllers/AuthController';
+import AuthController from '../../controllers/AuthController';
 import { User } from '../../api/AuthAPI';
 import { ProfileItem } from '../../components/ProfileItem';
-
-
 
 type UserProfileProps = User
 
@@ -31,6 +29,19 @@ class UserProfilePageBase extends Block {
     this.children.userData = userDataArray.map(name => {
       return new ProfileItem({ name, value: this.props[name] });
     });
+
+
+    this.children.logoutButton = new Button({
+      mode: 'btn',
+      type: "button",
+      text: "Выйти",
+      mainClasses: "btn_theme-primary btn_full-width btn_margin-b-xs",
+      events: {
+        click: () => {
+          AuthController.logout();
+        }
+      }
+    })
   }
 
   protected componentDidUpdate(oldProps: UserProfileProps, newProps: UserProfileProps): boolean {

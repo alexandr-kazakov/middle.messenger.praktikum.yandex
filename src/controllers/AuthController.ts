@@ -10,7 +10,6 @@ export class AuthController {
   }
 
   async signin(data: SigninData) {
-    console.log(100000000000);
     try {
       await this.api.signin(data);
       router.go('/profile');
@@ -35,6 +34,7 @@ export class AuthController {
     const user = await this.api.read();
 
     store.set('user', user);
+    // debugger;
   }
 
   async logout() {
