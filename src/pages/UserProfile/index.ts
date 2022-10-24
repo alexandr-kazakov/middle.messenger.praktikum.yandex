@@ -9,16 +9,13 @@ import AuthController from '../../controllers/AuthController';
 import { User } from '../../api/AuthAPI';
 import { ProfileItem } from '../../components/ProfileItem';
 
+
 type UserProfileProps = User
 
 const userDataArray = ['id', 'first_name', 'second_name', 'display_name', 'login', 'avatar', 'email', 'phone'] as Array<keyof UserProfileProps>;
 
 
 class UserProfilePageBase extends Block {
-  constructor() {
-    super({});
-  }
-
   init() {
     this.children.buttonSidebar = new ButtonSidebar({
       events: {
@@ -26,8 +23,11 @@ class UserProfilePageBase extends Block {
       },
     });
 
-    this.children.userData = userDataArray.map(name => {
-      return new ProfileItem({ name, value: this.props[name] });
+    this.children.fields = userDataArray.map(name => {
+      const resp = new ProfileItem({ name, value: this.props[name] });
+      console.log(949494949, resp);
+      return resp
+
     });
 
 
@@ -45,7 +45,9 @@ class UserProfilePageBase extends Block {
   }
 
   protected componentDidUpdate(oldProps: UserProfileProps, newProps: UserProfileProps): boolean {
-    (this.children.userData as ProfileItem[]).forEach((field, i) => {
+    (this.children.fields as ProfileItem[]).forEach((field, i) => {
+      console.log(91919191919, field);
+
       field.setProps({ value: newProps[userDataArray[i]] });
     });
 

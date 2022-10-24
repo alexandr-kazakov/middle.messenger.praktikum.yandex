@@ -1,15 +1,15 @@
 import Block from '../../utils/Block';
 import template from './btn-sidebar.pug';
-// import { Link } from '../../components/Link';
+import { Link } from '../../components/Link';
 import { withStore } from '../../utils/Store';
 
 
-export class ButtonSidebarBase extends Block {
+export class ButtonSidebar extends Block {
   constructor() {
     super({});
   }
   protected init() {
-    // this.children.backToChatButton = new Link({ to: '/messenger', label: '', classes: "link_userprofile-sidebar" });
+    this.children.backToChatButton = new Link({ to: '/messenger', label: '', classes: "link_userprofile-sidebar" });
   }
 
   render() {
@@ -18,6 +18,3 @@ export class ButtonSidebarBase extends Block {
 }
 
 
-const withChats = withStore((state) => ({ chats: [...(state.chats || [])] }));
-
-export const ButtonSidebar = withChats(ButtonSidebarBase);

@@ -12,7 +12,10 @@ export class ProfileItem extends Block {
   }
 
   render() {
-    return this.compile(template, this.props);
+    const response = this.compile(template, this.props);
+    console.log(939393939, JSON.stringify(response));
+    return response;
+
   }
 }
 
