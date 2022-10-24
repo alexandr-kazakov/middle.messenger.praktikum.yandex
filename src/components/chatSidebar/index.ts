@@ -5,12 +5,8 @@ import { Chat } from '../Chat';
 import { withStore } from '../../utils/Store';
 import { ChatInfo } from '../../api/ChatsAPI';
 import ChatsController from '../../controllers/ChatsController';
-import MessagesController from '../../controllers/MessagesController';
 import { Link } from '../Link';
 
-// interface ChatSidebarProps {
-//   chatsList: Record<string, any>[],
-// }
 
 const chats = [
   {
@@ -62,7 +58,6 @@ export class ChatSidebarBase extends Block {
     });
 
 
-    // this.children.profileLink = new Link({ to: '/profile', label: 'Профиль' });
   }
 
   navigate(to: string) {

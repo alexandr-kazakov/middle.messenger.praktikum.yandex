@@ -15,9 +15,9 @@ const userDataArray = ['id', 'first_name', 'second_name', 'display_name', 'login
 
 
 class UserProfilePageBase extends Block {
-  // constructor(props: UserProfileProps) {
-  //   super(props);
-  // }
+  constructor() {
+    super({});
+  }
 
   init() {
     this.children.buttonSidebar = new ButtonSidebar({
@@ -45,10 +45,7 @@ class UserProfilePageBase extends Block {
   }
 
   protected componentDidUpdate(oldProps: UserProfileProps, newProps: UserProfileProps): boolean {
-
-    (this.children.fields as ProfileItem[]).forEach((field, i) => {
-      console.log(4747474747474747);
-
+    (this.children.userData as ProfileItem[]).forEach((field, i) => {
       field.setProps({ value: newProps[userDataArray[i]] });
     });
 

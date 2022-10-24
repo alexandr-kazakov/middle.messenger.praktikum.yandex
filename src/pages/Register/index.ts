@@ -7,15 +7,10 @@ import { Button } from '../../components/Button';
 import { SignupData } from '../../api/AuthAPI';
 import AuthController from '../../controllers/AuthController';
 
-interface RegisterPageProps {
-  title: string,
-  authStatus: string,
-  authMessage: string,
-}
 
 export class RegisterPage extends Block {
-  constructor(props: RegisterPageProps) {
-    super(props);
+  constructor() {
+    super({});
   }
 
   init() {
