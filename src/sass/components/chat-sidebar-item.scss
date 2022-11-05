@@ -1,0 +1,9 @@
+.chat-sidebar-item {
+  border-bottom: 1px solid $gray-light;
+  cursor: pointer;
+  padding: 10px 25px;
+
+  &.selected {
+    background-color: #E4EDFD;
+  }
+}

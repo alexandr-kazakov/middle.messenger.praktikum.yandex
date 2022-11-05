@@ -18,9 +18,14 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     list-style: none;
+    max-height: calc(100% - 50px);
     margin: 0;
-    padding: 0;
+    overflow-y: scroll;
+    padding: 30px 15px;
   }
 
   &__companion {

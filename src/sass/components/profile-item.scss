@@ -1,0 +1,17 @@
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray-light;
+  padding: 8px 0;
+
+  &__col {
+    text-align: left;
+
+    &_right {
+      color: $gray;
+      text-align: right;
+    }
+  }
+
+
+}

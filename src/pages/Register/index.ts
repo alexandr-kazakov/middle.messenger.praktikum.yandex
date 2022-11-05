@@ -4,16 +4,13 @@ import Block from '../../utils/Block';
 import template from './register.pug';
 import { InputBox } from '../../components/InputBox';
 import { Button } from '../../components/Button';
+import { SignupData } from '../../api/AuthAPI';
+import AuthController from '../../controllers/AuthController';
 
-interface RegisterPageProps {
-  title: string,
-  authStatus: string,
-  authMessage: string,
-}
 
 export class RegisterPage extends Block {
-  constructor(props: RegisterPageProps) {
-    super(props);
+  constructor() {
+    super({});
   }
 
   init() {
@@ -104,7 +101,7 @@ export class RegisterPage extends Block {
     this.children.loginButton = new Button({
       mode: "btn",
       type: "submit",
-      text: "Авторизоваться",
+      text: "Зарегистрироваться",
       mainClasses: "btn_theme-primary btn_full-width btn_margin-b-xs",
       events: {
         click: () => {
@@ -116,11 +113,11 @@ export class RegisterPage extends Block {
 
   submit() {
     let validateError = false;
-    const submitData: Record<string, string> = {}
+    const submitData: Record<string, string> = {};
 
     Object.keys(this.children).forEach(key => {
       if (this.children[key] instanceof InputBox) {
-        submitData[key] = this.children[key].props.value;
+        submitData[this.children[key].props.name] = this.children[key].props.value;
 
 
         if (!this.children[key].props.isValid) {
@@ -138,6 +135,7 @@ export class RegisterPage extends Block {
     }
 
     console.log('submitData: ', submitData);
+    AuthController.signup(submitData as SignupData);
   }
 
   render() {

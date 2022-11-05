@@ -1,18 +1,20 @@
 import Block from '../../utils/Block';
 import template from './btn-sidebar.pug';
+import { Link } from '../../components/Link';
+import { withStore } from '../../utils/Store';
 
-interface ButtonProps {
-  events: {
-    // click: () => void;
-  };
-}
 
 export class ButtonSidebar extends Block {
-  constructor(props: ButtonProps) {
-    super('div', props);
+  constructor() {
+    super({});
+  }
+  protected init() {
+    this.children.backToChatButton = new Link({ to: '/messenger', label: '', classes: "link_userprofile-sidebar" });
   }
 
   render() {
     return this.compile(template, this.props);
   }
 }
+
+

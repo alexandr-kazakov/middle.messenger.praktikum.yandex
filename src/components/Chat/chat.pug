@@ -1,0 +1,6 @@
+div(class=isSelected ? 'selected chat-sidebar-item' : 'chat-sidebar-item')
+    | !{title}
+    if unread_count
+        span(class="zxd") !{unread_count}
+
+//- div(class="{{ styles.chat }} {{#if isSelected }}{{ styles.chat--selected }}{{/if}}")

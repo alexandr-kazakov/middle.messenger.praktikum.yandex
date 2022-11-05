@@ -6,9 +6,9 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "rm -rf dist/ && npm run build && node server.js",
-    "build": "rm -rf dist/ && parcel build 'src/*.html' --public-url ./",
-    "dev": "rm -rf dist/ && parcel src/chat.html -p 3000",
+    "start": "rimraf -rf dist/ && npm run build && node server.js",
+    "build": "rimraf -rf dist/ && parcel build 'src/*.html' --public-url ./",
+    "dev": "rimraf -rf dist/ && parcel src/index.html -p 3000",
     "lint:js": "npx eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "lint:css": "npx stylelint **/*.scss --fix"
   },
@@ -33,8 +33,10 @@
     "url": "https://github.com/alexandr-kazakov"
   },
   "dependencies": {
+    "chai": "^4.3.6",
     "connect-history-api-fallback": "2.0.0",
     "express": "4.18.1",
+    "mocha": "^10.1.0",
     "nanoid": "4.0.0",
     "stylelint-config-standard-scss": "5.0.0"
   }

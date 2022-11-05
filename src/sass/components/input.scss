@@ -23,7 +23,7 @@
   }
 
   &:not(:placeholder-shown) {
-    ~ .input-box__title {
+    ~.input-box__title {
       display: block;
     }
   }
@@ -44,5 +44,13 @@
 
   .input-box_icon & {
     padding-left: 65px;
+  }
+
+  &_margin-b-sm {
+    margin-bottom: 20px;
+  }
+
+  &_margin-b-md {
+    margin-bottom: 30px;
   }
 }

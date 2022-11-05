@@ -1,0 +1,17 @@
+.link {
+  color: $gray;
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 0;
+
+  &_sidebar {
+    display: block;
+    margin-bottom: 15px;
+    text-align: right;
+  }
+
+  &_userprofile-sidebar {
+    display: block;
+    height: 100%;
+  }
+}

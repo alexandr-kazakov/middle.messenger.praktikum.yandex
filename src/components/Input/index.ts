@@ -21,6 +21,14 @@ export class Input extends Block {
 
   }
 
+  public getValue() {
+    return (this.element as HTMLInputElement).value;
+  }
+
+  public setValue(value: string) {
+    return (this.element as HTMLInputElement).value = value;
+  }
+
   // this.validateResponde() {
 
   // }
