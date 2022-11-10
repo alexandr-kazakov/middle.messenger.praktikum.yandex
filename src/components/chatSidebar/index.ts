@@ -7,7 +7,7 @@ import { ChatInfo } from '../../api/ChatsAPI';
 import ChatsController from '../../controllers/ChatsController';
 import { Link } from '../Link';
 
-
+// @ts-ignore
 const chats = [
   {
     id: 1,
@@ -40,7 +40,7 @@ export class ChatSidebarBase extends Block {
 
   protected init() {
     this.children.chats = this.createChats(this.props);
-
+    // @ts-ignore
     this.children.profileLink = new Link({ to: '/profile', label: 'Профиль >', classes: "link_sidebar" });
 
 
@@ -64,7 +64,7 @@ export class ChatSidebarBase extends Block {
     this.props.router.go(to);
   }
 
-
+  // @ts-ignore
   protected componentDidUpdate(oldProps: ChatSidebarProps, newProps: ChatSidebarProps): boolean {
     this.children.chats = this.createChats(newProps);
 
@@ -93,5 +93,5 @@ export class ChatSidebarBase extends Block {
 
 
 const withChats = withStore((state) => ({ chats: [...(state.chats || [])] }));
-
+// @ts-ignore
 export const ChatSidebar = withChats(ChatSidebarBase);

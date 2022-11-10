@@ -54,7 +54,7 @@ export class ChatMainBase extends Block {
   }
 
 
-
+  // @ts-ignore
   protected componentDidUpdate(oldProps: ChatMainProps, newProps: ChatMainProps): boolean {
     this.children.messages = this.createMessages(newProps);
 
@@ -93,6 +93,7 @@ const withSelectedChatMessages = withStore(state => {
   };
 });
 
+// @ts-ignore
 export const ChatMain = withSelectedChatMessages(ChatMainBase);
 
 

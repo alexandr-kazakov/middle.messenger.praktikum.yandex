@@ -41,37 +41,16 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.pug$/,
         loader: 'pug-loader',
         exclude: /(node_modules)/,
-      },
-      {
-        test: /\.svg$/,
-        type: 'asset/inline',
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'images',
-          },
-        }],
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot)$/i,
-        type: 'asset/inline',
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts',
-          },
-        }],
       },
     ],
   },
@@ -82,11 +61,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
-    new CopyPlugin({
-      patterns: [{
-        from: 'static',
-        to: '',
-      }],
-    }),
+    // new CopyPlugin({
+    //   patterns: [{
+    //     from: 'static',
+    //     to: '',
+    //   }],
+    // }),
   ],
 };

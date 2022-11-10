@@ -17,6 +17,7 @@ const userDataArray = ['id', 'first_name', 'second_name', 'display_name', 'login
 
 class UserProfilePageBase extends Block {
   init() {
+    // @ts-ignore
     this.children.buttonSidebar = new ButtonSidebar({
       events: {
         click: () => console.log('clicked'),
@@ -43,7 +44,7 @@ class UserProfilePageBase extends Block {
       }
     })
   }
-
+  // @ts-ignore
   protected componentDidUpdate(oldProps: UserProfileProps, newProps: UserProfileProps): boolean {
     (this.children.fields as ProfileItem[]).forEach((field, i) => {
       console.log(91919191919, field);
@@ -61,5 +62,5 @@ class UserProfilePageBase extends Block {
 
 
 const withUser = withStore((state) => ({ ...state.user }))
-
+// @ts-ignore
 export const UserProfilePage = withUser(UserProfilePageBase);
