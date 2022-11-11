@@ -4,6 +4,7 @@ import Router from './utils/Router';
 import { UserProfilePage } from './pages/UserProfile';
 import AuthController from './controllers/AuthController';
 import { ChatPage } from './pages/Chat';
+import './sass/global.scss';
 
 enum Routes {
   Index = '/',
