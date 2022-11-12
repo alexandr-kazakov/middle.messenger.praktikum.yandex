@@ -67,10 +67,5 @@
     "nanoid": "^3.3.4",
     "rimraf": "^3.0.2",
     "stylelint-config-standard-scss": "5.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:js"
-    }
   }
 }
