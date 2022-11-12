@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PugPlugin = require('pug-plugin');
 
 module.exports = {
   mode: 'development',
@@ -49,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        loader: PugPlugin.loader,
         exclude: /(node_modules)/,
       },
     ],
