@@ -33,6 +33,7 @@ Cool messenger for fun!
 
 ## Live demo
 
+[Heroku](https://ya-praktikum-chat.herokuapp.com/)
 [Netlify](https://admirable-gecko-a28895.netlify.app/)
 
 ## Design
