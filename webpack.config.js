@@ -1,9 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PugPlugin = require('pug-plugin');
-
+// const PugPlugin = require('pug-plugin');
+// esModule: true,
 module.exports = {
   mode: 'development',
   stats: 'maximal',
@@ -50,7 +49,7 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        loader: PugPlugin.loader,
+        loader: '@webdiscus/pug-loader',
         exclude: /(node_modules)/,
       },
     ],
@@ -62,11 +61,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
-    // new CopyPlugin({
-    //   patterns: [{
-    //     from: 'static',
-    //     to: '',
-    //   }],
-    // }),
   ],
 };
