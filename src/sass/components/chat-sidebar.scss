@@ -5,11 +5,19 @@
   max-width: 310px;
   padding-top: 10px;
   padding-right: 15px;
+  position: relative;
   width: 100%;
 
   &__list {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  &__create-chat-nav {
+    bottom: 15px;
+    left: o;
+    position: absolute;
+    width: calc(100% - 15px);
   }
 }

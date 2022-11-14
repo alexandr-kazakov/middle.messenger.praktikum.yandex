@@ -5,6 +5,7 @@ import template from './chat-main.pug';
 import { Message } from '../Message';
 import MessagesController, { Message as MessageInfo } from '../../controllers/MessagesController';
 import { withStore } from '../../utils/Store';
+import ChatsController from '../../controllers/ChatsController';
 
 interface ChatMainProps {
   selectedChat: number | undefined;
@@ -51,6 +52,72 @@ export class ChatMainBase extends Block {
         }
       },
     });
+
+    this.children.btnAddUserToChat = new Button({
+      mode: "btn",
+      type: "button",
+      text: "Добавить пользователя в чат",
+      mainClasses: "btn_theme-primary",
+      events: {
+        click: () => {
+          const body = document.querySelector('#bodyApp');
+          body?.classList.add('modal-mode')
+          const modal = document.querySelector('#addNewUSerToChat');
+          modal?.classList.add('show');
+        },
+      },
+    });
+
+
+    this.children.modalBtnAddUserToChat = new Button({
+      mode: "btn",
+      type: "button",
+      text: "Добавить нового пользователя в чат",
+      mainClasses: "btn_theme-primary btn_full-width",
+      events: {
+        click: () => {
+          const input = this.children.inputAddUserToChat as Input;
+          const userID = Number(input.getValue());
+          input.setValue('');
+          ChatsController.addUserToChat(this.props.selectedChat, userID);
+
+          const body = document.querySelector('#bodyApp');
+          body?.classList.remove('modal-mode');
+          const modal = document.querySelector('#addNewUSerToChat');
+          modal?.classList.remove('show');
+        },
+      },
+    });
+
+    this.children.modalCloseBtn = new Button({
+      mode: "btn",
+      type: "button",
+      text: "✕",
+      mainClasses: "btn_close-theme",
+      events: {
+        click: () => {
+          const body = document.querySelector('#bodyApp');
+          body?.classList.remove('modal-mode')
+
+          const modal = document.querySelector('#addNewUSerToChat');
+          modal?.classList.remove('show');
+        },
+      },
+    });
+
+    this.children.inputAddUserToChat = new Input({
+      type: 'text',
+      name: 'newChatTitle',
+      placeholder: "Введите ID пользователя",
+      title: "",
+      mainClasses: "gray-theme input_margin-b-md",
+      events: {
+        blur: () => {
+          console.log('blur')
+        }
+      },
+    });
+
   }
 
 

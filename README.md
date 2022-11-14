@@ -45,7 +45,7 @@ Cool messenger for fun!
 
 ## Live demo
 
-[Heroku](https://ya-praktikum-chat.herokuapp.com/)
+[Heroku](https://ya-praktikum-chat-4.herokuapp.com/)
 [Netlify](https://admirable-gecko-a28895.netlify.app/)
 
 ## Design

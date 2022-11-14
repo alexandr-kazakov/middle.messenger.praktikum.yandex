@@ -12,6 +12,11 @@ body {
   font-size: 13px;
   height: 100%;
   line-height: 1.4;
+
+  &.modal-mode {
+    overflow: hidden;
+    padding-right: 0px;
+  }
 }
 
 *,
@@ -42,8 +47,7 @@ a {
     color: $primary-hover;
   }
 
-  &:active {
-  }
+  &:active {}
 
   &:focus {
     outline: none;
