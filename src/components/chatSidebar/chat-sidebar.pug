@@ -2,11 +2,26 @@ aside.chat-sidebar
   header.chat-sidebar__header
     | !{profileLink}
     | !{input}
+
+  div.chat-sidebar__create-chat-nav
+    | !{addNewCHatBtn}
+
+  div.modal(id="createNewChatModal")
+    .modal__content
+      .modal__header
+        | !{modalCloseBtn}
+      .modal__body
+        | !{inputCreateChat}
+        | !{btnCreateChat}
+
   ul.chat-sidebar__list
     each item in chats
       | !{item}
     else
       | Чаты не найдены!
+
+
+
       //- li.chat-sidebar__list-item
       //-   .chat-preview-box
       //-      .chat-preview-box__col-left

@@ -74,11 +74,13 @@ export class LoginPage extends Block {
 
     Object.keys(this.children).forEach(key => {
       if (this.children[key] instanceof InputBox) {
+        // @ts-ignore
         submitData[this.children[key].props.name] = this.children[key].props.value;
 
-
+        // @ts-ignore
         if (!this.children[key].props.isValid) {
           validateError = true;
+          // @ts-ignore
           this.children[key].props.errorMessageVisibility = true;
           this.props.authStatus = 'error';
           this.props.authMessage = "Поля заполнены некорректно!";
@@ -92,6 +94,7 @@ export class LoginPage extends Block {
     }
 
     console.log('submitData: ', submitData);
+    // @ts-ignore
     AuthController.signin(submitData as SigninData);
   }
 

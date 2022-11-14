@@ -1,4 +1,15 @@
 main.page-wrapper.page-wrapper_profile
+  div.modal(id="editUserDataModal")
+    .modal__content
+      .modal__header
+        | !{modalCloseBtn}
+      .modal__body
+        | !{inputEmail}
+        | !{inputLogin}
+        | !{inputName}
+        | !{inputLastName}
+        | !{inputPhone}
+        | !{modalUpdateUserDataBtn}
   | !{buttonSidebar}
   .profile-box
     .profile-box__header
@@ -16,10 +27,7 @@ main.page-wrapper.page-wrapper_profile
       table.table-box
         tr
           td
-            a(href="#") Изменить данные
-        tr
-          td
-            a(href="#") Изменить пароль
+            | !{btnEditData}
         tr
           td
             |  !{logoutButton}

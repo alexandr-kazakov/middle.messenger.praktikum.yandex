@@ -1,7 +1,7 @@
 import Block from '../../utils/Block';
 import template from './btn-sidebar.pug';
 import { Link } from '../../components/Link';
-import { withStore } from '../../utils/Store';
+// import { withStore } from '../../utils/Store';
 
 
 export class ButtonSidebar extends Block {
@@ -9,6 +9,7 @@ export class ButtonSidebar extends Block {
     super({});
   }
   protected init() {
+    // @ts-ignore
     this.children.backToChatButton = new Link({ to: '/messenger', label: '', classes: "link_userprofile-sidebar" });
   }
 

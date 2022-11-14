@@ -1,7 +1,15 @@
 
 .chat-main
+  div.modal(id="addNewUSerToChat")
+    .modal__content
+      .modal__header
+        | !{modalCloseBtn}
+      .modal__body
+        | !{inputAddUserToChat}
+        | !{modalBtnAddUserToChat}
   if selectedChat
     header.chat-main__header
+      | !{btnAddUserToChat}
       .chat-main__companion
         //- img.chat-main__companion-picture(src=chatData.ownerPicture)
         //- .chat-main__companion-name= chatData.ownerName
