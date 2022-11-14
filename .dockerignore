@@ -1,5 +1,4 @@
-.parcel - cache /
-  dist /
-  node_modules /
-.idea /
-  yarn - error.log
+node_modules
+dist
+.parcel-cache
+.idea

@@ -13,7 +13,7 @@
     "lint:css": "npx stylelint **/*.scss --fix",
     "test": "mocha --require ts-node/register --require ./mochaSetup.js './src/**/*.test.ts'",
     "heroku-prebuild": "npm config set ignore-scripts true",
-    "prepare": "node -v && husky install && chmod ug+x .husky/*"
+    "prepare": "node -v && husky install"
   },
   "devDependencies": {
     "@parcel/transformer-pug": "^2.7.0",
